@@ -1,5 +1,7 @@
 # ARTBITRAGE
 
+VERSION 1.01
+
 - Verander chromedriver path
 
 # TO DO
