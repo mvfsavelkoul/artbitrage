@@ -12,3 +12,4 @@
 # NICE TO HAVE
 
 1. Kunnen we multiplien als er 2 bets mogelijk zijn?
+2. Gelijkspel ook erbij (1/A+1/B+1/G)
