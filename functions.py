@@ -8,15 +8,13 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 
-def get_html(url, badpak):
+def get_html(url, path):
     options = Options()
     options.headless = True
     options.add_argument("--window-size=1920,1080")
+    #driver = webdriver.Chrome(r'/Users/maxsavelkoul/Documents/Projecten/Arbitrage Bot/artbitrage/chromedriver')
 
-    if badpak:
-        driver = webdriver.Chrome(path)
-    else:
-        driver = webdriver.Chrome(r'/Users/maxsavelkoul/Documents/Projecten/Arbitrage Bot/artbitrage')
+    driver = webdriver.Chrome(executable_path=path)
     driver.get(url)
 
     time.sleep(15)
