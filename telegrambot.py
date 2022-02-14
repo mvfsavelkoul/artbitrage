@@ -1,3 +1,4 @@
+from turtle import update
 import requests
 import bs4
 import pandas as pd
@@ -59,7 +60,12 @@ def start_bot(toto_url, toto_account, bwin_url, bwin_account):
         update.message.reply_text("Let me check!")
         update.message.reply_text("Yes he is!")
 
+    def artbot(update: Update, context: CallbackContext):
+        update.message.reply_audio(audio=open('/Users/maxsavelkoul/Documents/Projecten/Arbitrage Bot/artbitrage/artbat.mp3', 'rb'))
+
     updater.dispatcher.add_handler(CommandHandler('start', start))
     updater.dispatcher.add_handler(CommandHandler('showfactors', showfactors))
     updater.dispatcher.add_handler(CommandHandler('isbadpakgay', isbadpakgay))
+    updater.dispatcher.add_handler(CommandHandler('artbot', artbot))
+
     updater.start_polling()
