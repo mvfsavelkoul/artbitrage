@@ -14,7 +14,6 @@ def main():
     #path = badpath
     path = r'/Users/maxsavelkoul/Documents/Projecten/Arbitrage Bot/artbitrage'
 
-
     telegrambot.start_bot(toto_url, toto_account, bwin_url, bwin_account, path)
 
     return 0

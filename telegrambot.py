@@ -60,7 +60,7 @@ def start_bot(toto_url, toto_account, bwin_url, bwin_account,path):
         update.message.reply_text("No he fucks bitches")
 
     def artbot(update: Update, context: CallbackContext):
-        update.message.reply_audio(audio=open(path+'/artbat.mp3', 'rb'))
+        update.message.reply_audio(audio=open(path+'/other/artbat.mp3', 'rb'))
 
     updater.dispatcher.add_handler(CommandHandler('start', start))
     updater.dispatcher.add_handler(CommandHandler('showfactors', showfactors))

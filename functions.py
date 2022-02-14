@@ -16,7 +16,7 @@ def get_html(url, path):
 
     #pakt m anders niet...
     if path==r'/Users/maxsavelkoul/Documents/Projecten/Arbitrage Bot/artbitrage':
-        driver = webdriver.Chrome(r'/Users/maxsavelkoul/Documents/Projecten/Arbitrage Bot/artbitrage/chromedriver')
+        driver = webdriver.Chrome(r'/Users/maxsavelkoul/Documents/Projecten/Arbitrage Bot/artbitrage/other/chromedriver')
     else:
         driver = webdriver.Chrome(r'/usr/local/bin/chromedriver')
         
