@@ -48,8 +48,6 @@ def start_bot(toto_url, toto_account, bwin_url, bwin_account,path):
             message = "Unfortunately, no arbitrage opportunities are found."
         update.message.reply_text(message)
 
-
-
     updater.dispatcher.add_handler(CommandHandler('findbet', findbet))
 
     def showfactors(update: Update, context: CallbackContext):
@@ -62,7 +60,6 @@ def start_bot(toto_url, toto_account, bwin_url, bwin_account,path):
         update.message.reply_text("No he fucks bitches")
 
     def artbot(update: Update, context: CallbackContext):
-
         update.message.reply_audio(audio=open(path+'/artbat.mp3', 'rb'))
 
     updater.dispatcher.add_handler(CommandHandler('start', start))

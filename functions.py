@@ -35,7 +35,6 @@ def get_html(url, path):
     driver.quit()
     return bs4.BeautifulSoup(content, features="html.parser")
 
-
 # Data collection for BWIN
 def get_bwin(soup):
     away_teams = []
@@ -79,7 +78,6 @@ def get_bwin(soup):
     df = pd.DataFrame({'Team A': away_teams, 'Team B': home_teams, 'Odds A': A_odds, 'Odds B': B_odds})
 
     return df
-
 
 # Data collection for Toto
 def get_toto(soup):
@@ -237,9 +235,6 @@ def get_factors(df_bwin, df_toto):
     df_final['Bid (y/n)'] = np.select(conds2, vals2)
 
     return df_final
-
-
-
 
 def winning_bet(df, balance_toto, balance_bwin):
 
