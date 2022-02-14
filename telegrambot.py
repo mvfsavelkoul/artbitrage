@@ -15,20 +15,20 @@ from telegram.ext.filters import Filters
 
 import functions
 
-def start_bot(toto_url, toto_account, bwin_url, bwin_account):
+def start_bot(toto_url, toto_account, bwin_url, bwin_account,badpak):
     updater = Updater("5252457967:AAEkTon66pFdtaImQbrpQynU2dchKWAwdzg",
 				use_context=True)
 
     def start(update: Update, context: CallbackContext):
-        update.message.reply_text("What's up my man!")
+        update.message.reply_text("What's up my man")
 
     def findbet(update: Update, context: CallbackContext):
         update.message.reply_text("Okay! That will take just a minute (58s)...")
 
         update.message.reply_text("Retrieving data...")
         #Getting soups
-        soup_bwin = functions.get_html(bwin_url)
-        soup_toto = functions.get_html(toto_url)
+        soup_bwin = functions.get_html(bwin_url, badpak)
+        soup_toto = functions.get_html(toto_url, badpak)
 
         #Getting entries
         df_bwin = functions.get_bwin(soup_bwin)
@@ -58,10 +58,13 @@ def start_bot(toto_url, toto_account, bwin_url, bwin_account):
 
     def isbadpakgay(update: Update, context: CallbackContext):
         update.message.reply_text("Let me check!")
-        update.message.reply_text("Yes he is!")
+        update.message.reply_text("Not sure!")
 
     def artbot(update: Update, context: CallbackContext):
-        update.message.reply_audio(audio=open('/Users/maxsavelkoul/Documents/Projecten/Arbitrage Bot/artbitrage/artbat.mp3', 'rb'))
+        if badpak:
+            update.message.reply_audio(audio=open('artbat.mp3', 'rb'))
+        else:
+            update.message.reply_audio(audio=open('/Users/maxsavelkoul/Documents/Projecten/Arbitrage Bot/artbitrage/artbat.mp3', 'rb'))
 
     updater.dispatcher.add_handler(CommandHandler('start', start))
     updater.dispatcher.add_handler(CommandHandler('showfactors', showfactors))

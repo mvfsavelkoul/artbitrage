@@ -1,3 +1,4 @@
+from importlib.resources import path
 import requests
 import bs4
 import pandas as pd
@@ -7,12 +8,15 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 
-def get_html(url):
+def get_html(url, badpak):
     options = Options()
     options.headless = True
     options.add_argument("--window-size=1920,1080")
 
-    driver = webdriver.Chrome(r'/Users/maxsavelkoul/Documents/Projecten/Arbitrage Bot/artbitrage')
+    if badpak:
+        driver = webdriver.Chrome(path)
+    else:
+        driver = webdriver.Chrome(r'/Users/maxsavelkoul/Documents/Projecten/Arbitrage Bot/artbitrage')
     driver.get(url)
 
     time.sleep(15)
