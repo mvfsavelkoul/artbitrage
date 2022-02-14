@@ -59,6 +59,7 @@ def start_bot(toto_url, toto_account, bwin_url, bwin_account,path):
     def isbadpakgay(update: Update, context: CallbackContext):
         update.message.reply_text("Let me check!")
         update.message.reply_text("Not sure!")
+        update.message.reply_text("No he fucks bitches")
 
     def artbot(update: Update, context: CallbackContext):
 
