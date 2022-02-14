@@ -12,7 +12,7 @@ def get_html(url):
     options.headless = True
     options.add_argument("--window-size=1920,1080")
 
-    driver = webdriver.Chrome(r'/Users/maxsavelkoul/Documents/Projecten/chromedriver')
+    driver = webdriver.Chrome(r'/Users/maxsavelkoul/Documents/Projecten/Arbitrage Bot/artbitrage')
     driver.get(url)
 
     time.sleep(15)
