@@ -13,13 +13,8 @@ def get_html(url, path):
     options.headless = True
     options.add_argument("--window-size=1920,1080")
 
-
-    #pakt m anders niet...
-    if path==r'/Users/maxsavelkoul/Documents/Projecten/Arbitrage Bot/artbitrage':
-        driver = webdriver.Chrome(r'/Users/maxsavelkoul/Documents/Projecten/Arbitrage Bot/artbitrage/other/chromedriver')
-    else:
-        driver = webdriver.Chrome(r'/usr/local/bin/chromedriver')
-        
+    # options=options toevoegen om headless te maken
+    driver = webdriver.Chrome(path+'/other/chromedriver', options=options)
     driver.get(url)
 
     time.sleep(15)
