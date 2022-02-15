@@ -1,3 +1,4 @@
+from importlib.resources import path
 import requests
 import bs4
 import pandas as pd
@@ -7,12 +8,13 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 
-def get_html(url):
+def get_html(url, path):
     options = Options()
     options.headless = True
     options.add_argument("--window-size=1920,1080")
 
-    driver = webdriver.Chrome(r'/Users/maxsavelkoul/Documents/Projecten/Arbitrage Bot/artbitrage')
+    # options=options toevoegen om headless te maken
+    driver = webdriver.Chrome(path+'/other/chromedriver', options=options)
     driver.get(url)
 
     time.sleep(15)
@@ -27,7 +29,6 @@ def get_html(url):
     content = driver.page_source
     driver.quit()
     return bs4.BeautifulSoup(content, features="html.parser")
-
 
 # Data collection for BWIN
 def get_bwin(soup):
@@ -72,7 +73,6 @@ def get_bwin(soup):
     df = pd.DataFrame({'Team A': away_teams, 'Team B': home_teams, 'Odds A': A_odds, 'Odds B': B_odds})
 
     return df
-
 
 # Data collection for Toto
 def get_toto(soup):
@@ -230,9 +230,6 @@ def get_factors(df_bwin, df_toto):
     df_final['Bid (y/n)'] = np.select(conds2, vals2)
 
     return df_final
-
-
-
 
 def winning_bet(df, balance_toto, balance_bwin):
 

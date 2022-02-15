@@ -1,5 +1,7 @@
 # ARTBITRAGE
 
+VERSION 1.01
+
 - Verander chromedriver path
 
 # TO DO
@@ -11,6 +13,7 @@
 Ofwel, path in het begin invullen en vervolgens wordt ie gebruikt voor alle locaties
 a) artbat
 b) chromedriver
+5. Bij TOTO vanzelf klikken op Toon alle wedstrijden
 
 
 # NICE TO HAVE
