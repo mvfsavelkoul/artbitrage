@@ -63,9 +63,13 @@ def start_bot(toto_url, toto_account, bwin_url, bwin_account):
     def artbot(update: Update, context: CallbackContext):
         update.message.reply_audio(audio=open('/Users/maxsavelkoul/Documents/Projecten/Arbitrage Bot/artbitrage/artbat.mp3', 'rb'))
 
+    def tellmeajoke(update: Update, context: CallbackContext):
+            update.message.reply_text("Should I tell you a Max Savelkoul?")
+
     updater.dispatcher.add_handler(CommandHandler('start', start))
     updater.dispatcher.add_handler(CommandHandler('showfactors', showfactors))
     updater.dispatcher.add_handler(CommandHandler('isbadpakgay', isbadpakgay))
     updater.dispatcher.add_handler(CommandHandler('artbot', artbot))
+    updater.dispatcher.add_handler(CommandHandler('tellmeajoke', tellmeajoke))
 
     updater.start_polling()
