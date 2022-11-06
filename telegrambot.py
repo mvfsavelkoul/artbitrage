@@ -16,7 +16,7 @@ from telegram.ext.filters import Filters
 import functions
 
 def start_bot(toto_url, toto_account, bwin_url, bwin_account,path):
-    updater = Updater("5252457967:AAEkTon66pFdtaImQbrpQynU2dchKWAwdzg",
+    updater = Updater(,
 				use_context=True)
 
     def start(update: Update, context: CallbackContext):
